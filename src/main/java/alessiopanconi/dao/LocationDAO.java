@@ -5,6 +5,8 @@ import alessiopanconi.exceptions.OggettoNonTrovatoException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
+import java.util.UUID;
+
 public class LocationDAO {
 
     private EntityManager entityManager;
@@ -24,7 +26,7 @@ public class LocationDAO {
         System.out.println("La location: " + nuovaLocation.getCitta() + " è stata creata correttamente");
     }
 
-    public Location trovaLocationPerId (long id)
+    public Location trovaLocationPerId (UUID id)
     {
         Location found = entityManager.find(Location.class, id);
         if (found == null) throw new OggettoNonTrovatoException(id);

@@ -3,6 +3,7 @@ package alessiopanconi.entities;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "location")
@@ -11,7 +12,7 @@ public class Location {
     @Id
     @GeneratedValue
     @Column(name = "blog_id")
-    private long id;
+    private UUID id;
     @Column(name = "nome",nullable = false)
     private String nome;
     @Column(name = "citta",nullable = false)
@@ -31,7 +32,7 @@ public class Location {
     }
 
     //GETTER
-    public long getId() {
+    public UUID getId() {
         return id;
     }
     public String getNome() {

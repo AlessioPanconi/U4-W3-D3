@@ -6,6 +6,8 @@ import alessiopanconi.exceptions.OggettoNonTrovatoException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
+import java.util.UUID;
+
 public class EventoDAO {
 
     private EntityManager entityManager;
@@ -27,7 +29,7 @@ public class EventoDAO {
         System.out.println("L'evento" + nuovoEvento.getTitolo() + " è stato creato correttamente");
     }
 
-    public Evento trovaEventoPerId(long id) {
+    public Evento trovaEventoPerId(UUID id) {
         Evento found = entityManager.find(Evento.class, id);
         if (found == null) throw new OggettoNonTrovatoException(id);
         return found;

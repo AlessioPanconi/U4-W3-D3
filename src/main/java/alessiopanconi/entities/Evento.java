@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "evento")
@@ -14,7 +15,7 @@ public class Evento {
     @Id
     @GeneratedValue
     @Column(name = "evento_id")
-    private long id;
+    private UUID id;
     @Column(name = "titolo",nullable = false)
     private String titolo;
     @Column(name = "data_evento",nullable = false)
@@ -46,6 +47,11 @@ public class Evento {
     }
 
     //GETTER
+
+    public UUID getId() {
+        return id;
+    }
+
     public String getTitolo() {
         return titolo;
     }

@@ -6,6 +6,8 @@ import alessiopanconi.exceptions.OggettoNonTrovatoException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
+import java.util.UUID;
+
 public class PartecipazioniDAO {
 
     private EntityManager entityManager;
@@ -24,7 +26,7 @@ public class PartecipazioniDAO {
         System.out.println("La partecipazione con id: " +nuovaPartecipazione.getPartecipazioneId() + " è stata creata correttamente");
     }
 
-    public Partecipazioni trovaPartecipazioniPerId(long id) {
+    public Partecipazioni trovaPartecipazioniPerId(UUID id) {
         Partecipazioni found = entityManager.find(Partecipazioni.class, id);
         if (found == null) throw new OggettoNonTrovatoException(id);
         return found;

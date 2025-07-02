@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "persona")
@@ -13,7 +14,7 @@ public class Persona {
     @Id
     @GeneratedValue
     @Column(name = "persona_id",nullable = false)
-    private long id;
+    private UUID id;
     @Column(name = "nome",nullable = false)
     private String nome;
     @Column(name="cognome",nullable = false)
@@ -43,7 +44,7 @@ public class Persona {
     }
 
     //GETTER
-    public long getId() {
+    public UUID getId() {
         return id;
     }
     public String getNome() {
